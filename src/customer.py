@@ -55,7 +55,7 @@ class Customer:
         except json.JSONDecodeError:
             print(f"Error: Invalid JSON in {Customer.DATA_FILE}")
             return {}
-        except Exception as e:
+        except (IOError, OSError) as e:
             print(f"Error loading customers: {e}")
             return {}
 
@@ -71,7 +71,7 @@ class Customer:
         try:
             with open(Customer.DATA_FILE, "w", encoding="utf-8") as file:
                 json.dump(customers, file, indent=4, ensure_ascii=False)
-        except Exception as e:
+        except (IOError, OSError) as e:
             print(f"Error saving customers: {e}")
 
     def create_customer(self):
