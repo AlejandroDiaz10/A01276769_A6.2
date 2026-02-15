@@ -25,8 +25,12 @@ hotel-reservation-system/
 │   ├── test_customer.py
 │   └── test_reservation.py
 ├── data/                  # Archivos de persistencia (JSON)
+│   ├── sample/            # Datos de referencia (no modificables)
+│   │   ├── customers.json
+│   │   ├── hotels.json
+│   │   └── reservations.json
+│   ├── customers.json     # Datos reales (modificables en tiempo de ejecución)
 │   ├── hotels.json
-│   ├── customers.json
 │   └── reservations.json
 └── results/               # Resultados de pruebas y análisis
     ├── flake8_analysis/
@@ -34,6 +38,13 @@ hotel-reservation-system/
     ├── coverage_reports/
     └── execution_tests/
 ```
+
+### Archivos de Datos
+
+El proyecto utiliza dos conjuntos de archivos JSON:
+
+- **`data/sample/`**: Archivos de **referencia** que contienen ejemplos de estructura de datos. No se modifican durante la ejecución.
+- **`data/`**: Archivos **reales** que se crean y modifican durante el uso normal del programa.
 
 ## Instalación
 
@@ -138,15 +149,15 @@ pylint src/ > results/pylint_analysis/project_pylint.txt 2>&1
 
 ## Estándares de Calidad
 
-- ✅ Cumple con PEP 8
-- ✅ Sin errores en Flake8
-- ✅ Pylint score: 10.00/10
-- ✅ Cobertura de código ≥ 85%
+- Cumple con PEP 8
+- Sin errores en Flake8
+- Pylint score: 10.00/10
+- Cobertura de código ≥ 85%
 
 ## Resultados de Calidad
 
 | Módulo | Flake8 | Pylint | Cobertura | Tests |
 |--------|--------|--------|-----------|-------|
-| Customer | 0 errores | 10.00/10 | 92% | 10/10 ✅ |
+| Customer | 0 errores | 10.00/10 | 92% | 10/10 |
 | Hotel | - | - | - | - |
 | Reservation | - | - | - | - |
