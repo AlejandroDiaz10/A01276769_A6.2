@@ -1,0 +1,25 @@
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.003s
+
+OK
+Customer C001 created successfully
+Error: Customer C001 already exists
+Customer C001 created successfully
+Error: Customer C999 not found
+Customer C001 created successfully
+Customer C001 deleted successfully
+Error: Customer C999 not found
+Customer C001 created successfully
+
+==================================================
+Customer ID: C001
+Name: John Doe
+Email: john@email.com
+Phone: 1234567890
+==================================================
+
+Error: Invalid JSON in data/customers.json
+Error: Customer C999 not found
+Customer C001 created successfully
+Customer C001 modified successfully
