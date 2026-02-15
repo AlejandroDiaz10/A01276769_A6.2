@@ -21,8 +21,18 @@ hotel-reservation-system/
 │   ├── reservation.py     # Clase Reservation
 │   └── main.py            # Programa principal
 ├── tests/                 # Pruebas unitarias
+│   ├── test_hotel.py
+│   ├── test_customer.py
+│   └── test_reservation.py
 ├── data/                  # Archivos de persistencia (JSON)
+│   ├── hotels.json
+│   ├── customers.json
+│   └── reservations.json
 └── results/               # Resultados de pruebas y análisis
+    ├── flake8_analysis/
+    ├── pylint_analysis/
+    ├── coverage_reports/
+    └── execution_tests/
 ```
 
 ## Instalación
@@ -46,9 +56,97 @@ pip install -r requirements.txt
 - pylint (análisis estático de código)
 - coverage (cobertura de código)
 
+## Testing y Análisis de Calidad
+
+### **Customer Module**
+
+```bash
+# Ejecutar tests
+python -m unittest tests/test_customer.py -v
+
+# Generar reporte de cobertura
+coverage run -m unittest tests/test_customer.py
+coverage report -m > results/coverage_reports/customer_coverage.txt
+
+# Guardar output de tests
+coverage run -m unittest tests/test_customer.py > results/execution_tests/customer_tests.txt 2>&1
+
+# Análisis con Flake8
+flake8 src/customer.py > results/flake8_analysis/customer_flake8.txt 2>&1
+
+# Análisis con Pylint
+pylint src/customer.py > results/pylint_analysis/customer_pylint.txt 2>&1
+```
+
+### **Hotel Module**
+
+```bash
+# Ejecutar tests
+python -m unittest tests/test_hotel.py -v
+
+# Generar reporte de cobertura
+coverage run -m unittest tests/test_hotel.py
+coverage report -m > results/coverage_reports/hotel_coverage.txt
+
+# Guardar output de tests
+coverage run -m unittest tests/test_hotel.py > results/execution_tests/hotel_tests.txt 2>&1
+
+# Análisis con Flake8
+flake8 src/hotel.py > results/flake8_analysis/hotel_flake8.txt 2>&1
+
+# Análisis con Pylint
+pylint src/hotel.py > results/pylint_analysis/hotel_pylint.txt 2>&1
+```
+
+### **Reservation Module**
+
+```bash
+# Ejecutar tests
+python -m unittest tests/test_reservation.py -v
+
+# Generar reporte de cobertura
+coverage run -m unittest tests/test_reservation.py
+coverage report -m > results/coverage_reports/reservation_coverage.txt
+
+# Guardar output de tests
+coverage run -m unittest tests/test_reservation.py > results/execution_tests/reservation_tests.txt 2>&1
+
+# Análisis con Flake8
+flake8 src/reservation.py > results/flake8_analysis/reservation_flake8.txt 2>&1
+
+# Análisis con Pylint
+pylint src/reservation.py > results/pylint_analysis/reservation_pylint.txt 2>&1
+```
+
+### **Análisis Completo del Proyecto**
+
+```bash
+# Ejecutar todos los tests
+python -m unittest discover -s tests -v
+
+# Cobertura total
+coverage run -m unittest discover -s tests
+coverage report -m
+coverage html -d results/coverage_reports/html
+
+# Análisis completo con Flake8
+flake8 src/ > results/flake8_analysis/project_flake8.txt 2>&1
+
+# Análisis completo con Pylint
+pylint src/ > results/pylint_analysis/project_pylint.txt 2>&1
+```
+
 ## Estándares de Calidad
 
-- Cumple con PEP 8
-- Sin errores en Flake8
-- Sin warnings en Pylint
-- Cobertura de código ≥ 85%
+- ✅ Cumple con PEP 8
+- ✅ Sin errores en Flake8
+- ✅ Pylint score: 10.00/10
+- ✅ Cobertura de código ≥ 85%
+
+## Resultados de Calidad
+
+| Módulo | Flake8 | Pylint | Cobertura | Tests |
+|--------|--------|--------|-----------|-------|
+| Customer | 0 errores | 10.00/10 | 92% | 10/10 ✅ |
+| Hotel | - | - | - | - |
+| Reservation | - | - | - | - |
