@@ -157,7 +157,7 @@ class TestHotel(unittest.TestCase):
         self.assertNotIn("R001", hotels["H001"]["reservations"])
 
     def test_cancel_reservation_hotel_not_found(self):
-        """Test cancelling reservation in non-existent hotel (negative case)."""
+        """Test cancelling reservation in non-existent hotel (negative)."""
         result = Hotel.cancel_reservation("H999", "R001")
         self.assertFalse(result)
 
