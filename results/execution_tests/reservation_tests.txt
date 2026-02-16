@@ -1,0 +1,31 @@
+test_cancel_reservation_not_found (tests.test_reservation.TestReservation.test_cancel_reservation_not_found)
+Test cancelling a non-existent reservation (negative case). ... ok
+test_cancel_reservation_success (tests.test_reservation.TestReservation.test_cancel_reservation_success)
+Test cancelling a reservation successfully. ... ok
+test_create_reservation_duplicate (tests.test_reservation.TestReservation.test_create_reservation_duplicate)
+Test creating a duplicate reservation (negative case). ... ok
+test_create_reservation_success (tests.test_reservation.TestReservation.test_create_reservation_success)
+Test creating a reservation successfully. ... ok
+test_load_reservations_file_not_exists (tests.test_reservation.TestReservation.test_load_reservations_file_not_exists)
+Test loading reservations when file doesn't exist. ... ok
+test_load_reservations_invalid_json (tests.test_reservation.TestReservation.test_load_reservations_invalid_json)
+Test loading reservations with invalid JSON (negative case). ... ok
+test_multiple_reservations (tests.test_reservation.TestReservation.test_multiple_reservations)
+Test creating multiple reservations. ... ok
+test_to_dict (tests.test_reservation.TestReservation.test_to_dict)
+Test converting reservation to dictionary. ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK
+Error: Reservation R999 not found
+Reservation R001 created successfully
+Reservation R001 cancelled successfully
+Reservation R001 created successfully
+Error: Reservation R001 already exists
+Reservation R001 created successfully
+Error: Invalid JSON in test_reservations.json
+Reservation R001 created successfully
+Reservation R002 created successfully
+Reservation R003 created successfully
