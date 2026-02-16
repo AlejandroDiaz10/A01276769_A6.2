@@ -1,1 +1,12 @@
-{}
+{
+    "H001": {
+        "hotel_id": "H001",
+        "name": "Sunset Resort",
+        "location": "Miami, FL",
+        "total_rooms": 50,
+        "available_rooms": 49,
+        "reservations": [
+            "R001"
+        ]
+    }
+}

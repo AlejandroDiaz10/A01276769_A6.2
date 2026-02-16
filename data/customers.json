@@ -1,1 +1,8 @@
-{}
+{
+    "C001": {
+        "customer_id": "C001",
+        "name": "Alice Johnson",
+        "email": "alice.j@email.com",
+        "phone": "555-1001"
+    }
+}
