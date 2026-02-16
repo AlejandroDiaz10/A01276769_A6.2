@@ -1,0 +1,71 @@
+test_cancel_reservation_hotel_not_found (tests.test_hotel.TestHotel.test_cancel_reservation_hotel_not_found)
+Test cancelling reservation in non-existent hotel (negative). ... ok
+test_cancel_reservation_not_found (tests.test_hotel.TestHotel.test_cancel_reservation_not_found)
+Test cancelling non-existent reservation (negative case). ... ok
+test_cancel_reservation_success (tests.test_hotel.TestHotel.test_cancel_reservation_success)
+Test cancelling a reservation successfully. ... ok
+test_create_hotel_duplicate (tests.test_hotel.TestHotel.test_create_hotel_duplicate)
+Test creating a duplicate hotel (negative case). ... ok
+test_create_hotel_success (tests.test_hotel.TestHotel.test_create_hotel_success)
+Test creating a hotel successfully. ... ok
+test_delete_hotel_not_found (tests.test_hotel.TestHotel.test_delete_hotel_not_found)
+Test deleting a non-existent hotel (negative case). ... ok
+test_delete_hotel_success (tests.test_hotel.TestHotel.test_delete_hotel_success)
+Test deleting an existing hotel. ... ok
+test_display_hotel_not_found (tests.test_hotel.TestHotel.test_display_hotel_not_found)
+Test displaying a non-existent hotel (negative case). ... ok
+test_display_hotel_success (tests.test_hotel.TestHotel.test_display_hotel_success)
+Test displaying an existing hotel. ... ok
+test_load_hotels_file_not_exists (tests.test_hotel.TestHotel.test_load_hotels_file_not_exists)
+Test loading hotels when file doesn't exist. ... ok
+test_load_hotels_invalid_json (tests.test_hotel.TestHotel.test_load_hotels_invalid_json)
+Test loading hotels with invalid JSON (negative case). ... ok
+test_modify_hotel_not_found (tests.test_hotel.TestHotel.test_modify_hotel_not_found)
+Test modifying a non-existent hotel (negative case). ... ok
+test_modify_hotel_success (tests.test_hotel.TestHotel.test_modify_hotel_success)
+Test modifying hotel information. ... ok
+test_reserve_room_hotel_not_found (tests.test_hotel.TestHotel.test_reserve_room_hotel_not_found)
+Test reserving room in non-existent hotel (negative case). ... ok
+test_reserve_room_no_availability (tests.test_hotel.TestHotel.test_reserve_room_no_availability)
+Test reserving room when no rooms available (negative case). ... ok
+test_reserve_room_success (tests.test_hotel.TestHotel.test_reserve_room_success)
+Test reserving a room successfully. ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.003s
+
+OK
+Error: Hotel H999 not found
+Hotel H001 created successfully
+Error: Reservation R999 not found in hotel
+Hotel H001 created successfully
+Room reserved in hotel H001
+Reservation R001 cancelled in hotel H001
+Hotel H001 created successfully
+Error: Hotel H001 already exists
+Hotel H001 created successfully
+Error: Hotel H999 not found
+Hotel H001 created successfully
+Hotel H001 deleted successfully
+Error: Hotel H999 not found
+Hotel H001 created successfully
+
+==================================================
+Hotel ID: H001
+Name: Grand Hotel
+Location: New York
+Total Rooms: 100
+Available Rooms: 100
+Reservations: 0
+==================================================
+
+Error: Invalid JSON in test_hotels.json
+Error: Hotel H999 not found
+Hotel H001 created successfully
+Hotel H001 modified successfully
+Error: Hotel H999 not found
+Hotel H001 created successfully
+Room reserved in hotel H001
+Error: No available rooms in hotel H001
+Hotel H001 created successfully
+Room reserved in hotel H001
