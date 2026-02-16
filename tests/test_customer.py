@@ -2,24 +2,40 @@
 
 import unittest
 import os
-import json
 from src.customer import Customer
 
 
 class TestCustomer(unittest.TestCase):
     """Test cases for Customer class."""
 
+    @classmethod
+    def setUpClass(cls):
+        """Set up test environment once before all tests."""
+        # Save original DATA_FILE path
+        cls.original_data_file = Customer.DATA_FILE
+        # Use a test-specific file to avoid conflicts with real data
+        Customer.DATA_FILE = "test_customers.json"
+
+    @classmethod
+    def tearDownClass(cls):
+        """Clean up after all tests."""
+        # Restore original DATA_FILE
+        Customer.DATA_FILE = cls.original_data_file
+        # Delete test file if it exists
+        if os.path.exists("test_customers.json"):
+            os.remove("test_customers.json")
+
     def setUp(self):
         """Set up test fixtures before each test method."""
-        self.test_data_file = "data/customers.json"
         # Clean up before each test
-        if os.path.exists(self.test_data_file):
-            os.remove(self.test_data_file)
+        if os.path.exists(Customer.DATA_FILE):
+            os.remove(Customer.DATA_FILE)
 
     def tearDown(self):
         """Clean up after each test method."""
-        if os.path.exists(self.test_data_file):
-            os.remove(self.test_data_file)
+        # Clean up after each test
+        if os.path.exists(Customer.DATA_FILE):
+            os.remove(Customer.DATA_FILE)
 
     def test_create_customer_success(self):
         """Test creating a customer successfully."""
@@ -101,8 +117,8 @@ class TestCustomer(unittest.TestCase):
 
     def test_load_customers_invalid_json(self):
         """Test loading customers with invalid JSON (negative case)."""
-        os.makedirs("data", exist_ok=True)
-        with open(self.test_data_file, "w", encoding="utf-8") as f:
+        # Create invalid JSON file
+        with open(Customer.DATA_FILE, "w", encoding="utf-8") as f:
             f.write("invalid json content {{{")
 
         customers = Customer.load_customers()
