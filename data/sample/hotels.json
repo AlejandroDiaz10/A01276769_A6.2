@@ -1,1 +1,26 @@
-{}
+{
+    "H001": {
+        "hotel_id": "H001",
+        "name": "Grand Plaza Hotel",
+        "location": "New York, NY",
+        "total_rooms": 150,
+        "available_rooms": 150,
+        "reservations": []
+    },
+    "H002": {
+        "hotel_id": "H002",
+        "name": "Ocean View Resort",
+        "location": "Miami, FL",
+        "total_rooms": 200,
+        "available_rooms": 200,
+        "reservations": []
+    },
+    "H003": {
+        "hotel_id": "H003",
+        "name": "Mountain Lodge",
+        "location": "Denver, CO",
+        "total_rooms": 80,
+        "available_rooms": 80,
+        "reservations": []
+    }
+}
