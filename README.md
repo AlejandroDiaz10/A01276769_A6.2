@@ -160,4 +160,4 @@ pylint src/ > results/pylint_analysis/project_pylint.txt 2>&1
 |--------|--------|--------|-----------|-------|
 | Customer | 0 errores | 10.00/10 | 91% | 10/10 |
 | Hotel | 0 errores | 10.00/10 | 95% | 16/16 |
-| Reservation | - | - | - | - |
+| Reservation | 0 errores | 10.00/10 | 87% | 8/8 |
