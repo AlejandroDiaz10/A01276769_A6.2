@@ -159,5 +159,5 @@ pylint src/ > results/pylint_analysis/project_pylint.txt 2>&1
 | Módulo | Flake8 | Pylint | Cobertura | Tests |
 |--------|--------|--------|-----------|-------|
 | Customer | 0 errores | 10.00/10 | 91% | 10/10 |
-| Hotel | - | - | - | - |
+| Hotel | 0 errores | 10.00/10 | 95% | 16/16 |
 | Reservation | - | - | - | - |
