@@ -67,7 +67,9 @@ class Customer:
         Args:
             customers (dict): Dictionary of customers to save
         """
-        os.makedirs(os.path.dirname(Customer.DATA_FILE), exist_ok=True)
+        directory = os.path.dirname(Customer.DATA_FILE)
+        if directory:  # Only create directory if path includes one
+            os.makedirs(directory, exist_ok=True)
         try:
             with open(Customer.DATA_FILE, "w", encoding="utf-8") as file:
                 json.dump(customers, file, indent=4, ensure_ascii=False)
