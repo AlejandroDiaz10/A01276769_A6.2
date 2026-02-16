@@ -3,12 +3,12 @@
 import sys
 import os
 
-# Add parent directory to path to allow imports
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from src.customer import Customer
 from src.hotel import Hotel
 from src.reservation import Reservation
+
+# Add parent directory to path to allow imports
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 def display_menu():
@@ -139,7 +139,9 @@ def reservation_menu():
 
             # Verify hotel exists and reserve room
             if Hotel.reserve_room(hotel_id, reservation_id):
-                reservation = Reservation(reservation_id, customer_id, hotel_id)
+                reservation = Reservation(
+                    reservation_id, customer_id, hotel_id
+                )
                 if reservation.create_reservation():
                     print("Reservation created and room reserved successfully")
                 else:
