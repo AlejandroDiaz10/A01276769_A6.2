@@ -12,7 +12,6 @@ Este proyecto implementa un sistema completo de gestión de reservaciones hotele
 - Manejo de errores robusto
 
 ## Estructura del Proyecto
-
 ```
 hotel-reservation-system/
 ├── src/                    # Código fuente
@@ -37,6 +36,9 @@ hotel-reservation-system/
     ├── pylint_analysis/
     ├── coverage_reports/
     └── execution_tests/
+        ├── customer_manual_tests/
+        ├── hotel_manual_tests/
+        └── reservation_manual_tests/
 ```
 
 ### Archivos de Datos
@@ -67,10 +69,54 @@ pip install -r requirements.txt
 - pylint (análisis estático de código)
 - coverage (cobertura de código)
 
+## Uso
+
+### Ejecutar el programa principal
+
+El sistema incluye un programa interactivo con menú para gestionar clientes, hoteles y reservaciones.
+```bash
+# Opción 1: Ejecutar como módulo (recomendado)
+python -m src.main
+
+# Opción 2: Ejecutar directamente
+python src/main.py
+```
+
+### Funcionalidades disponibles
+
+**1. Customer Management (Gestión de Clientes)**
+- Crear, mostrar, modificar y eliminar clientes
+- Operaciones independientes, no requieren otros módulos
+
+**2. Hotel Management (Gestión de Hoteles)**
+- Crear, mostrar, modificar y eliminar hoteles
+- Gestionar disponibilidad de habitaciones
+- Operaciones independientes, no requieren otros módulos
+
+**3. Reservation Management (Gestión de Reservaciones)**
+- Crear reservación: **Requiere** un cliente existente y un hotel existente
+- Cancelar reservación: Libera automáticamente la habitación en el hotel
+- Integra los módulos Customer y Hotel
+
+### Flujo de trabajo recomendado
+
+1. **Crear clientes** en Customer Management
+2. **Crear hoteles** en Hotel Management
+3. **Crear reservaciones** vinculando clientes con hoteles
+4. Las habitaciones se reservan/liberan automáticamente
+
+### Persistencia de datos
+
+Los datos se almacenan en archivos JSON:
+- `data/customers.json` - Clientes activos
+- `data/hotels.json` - Hoteles con disponibilidad de habitaciones
+- `data/reservations.json` - Reservaciones activas
+
+Los archivos en `data/sample/` contienen datos de ejemplo y no se modifican.
+
 ## Testing y Análisis de Calidad
 
 ### **Customer Module**
-
 ```bash
 # Ejecutar tests
 python -m unittest tests/test_customer.py -v
@@ -90,7 +136,6 @@ pylint src/customer.py > results/pylint_analysis/customer_pylint.txt 2>&1
 ```
 
 ### **Hotel Module**
-
 ```bash
 # Ejecutar tests
 python -m unittest tests/test_hotel.py -v
@@ -110,7 +155,6 @@ pylint src/hotel.py > results/pylint_analysis/hotel_pylint.txt 2>&1
 ```
 
 ### **Reservation Module**
-
 ```bash
 # Ejecutar tests
 python -m unittest tests/test_reservation.py -v
@@ -130,7 +174,6 @@ pylint src/reservation.py > results/pylint_analysis/reservation_pylint.txt 2>&1
 ```
 
 ### **Análisis Completo del Proyecto**
-
 ```bash
 # Ejecutar todos los tests
 python -m unittest discover -s tests -v
